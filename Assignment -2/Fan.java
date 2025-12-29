@@ -1,4 +1,4 @@
-package org.example;
+package Assignment2;
 
 public class Fan {
     boolean isRunning;
