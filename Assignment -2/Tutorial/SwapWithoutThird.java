@@ -1,19 +1,38 @@
 package Assignment2.Tutorials;
 
+import java.util.Scanner;
+
 public class SwapWithoutThird {
     public static void main(String[] args) {
-        int a = 5;
-        int b = 10;
 
-        System.out.println("Before swapping:");
-        System.out.println("a = " + a + ", b = " + b);
+        Scanner sc = new Scanner(System.in);
+        char choice;
 
-        // Swap using arithmetic operations
-        a = a + b;  // a becomes 15 (5 + 10)
-        b = a - b;  // b becomes 5 (15 - 10)
-        a = a - b;  // a becomes 10 (15 - 5)
+        do {
+            System.out.print("Enter first number (a): ");
+            int a = sc.nextInt();
 
-        System.out.println("\nAfter swapping:");
-        System.out.println("a = " + a + ", b = " + b);
+            System.out.print("Enter second number (b): ");
+            int b = sc.nextInt();
+
+            System.out.println("\nBefore swapping:");
+            System.out.println("a = " + a + ", b = " + b);
+
+            // Swap without third variable
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            System.out.println("After swapping:");
+            System.out.println("a = " + a + ", b = " + b);
+
+            System.out.print("\nDo you want to swap another pair of numbers? (y/n): ");
+            choice = sc.next().charAt(0);
+
+        } while (choice == 'y' || choice == 'Y');
+
+        System.out.println("Program ended. Thank you!");
+        sc.close();
     }
-} 
+}
+
