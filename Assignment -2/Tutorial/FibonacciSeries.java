@@ -1,20 +1,34 @@
 package Assignment2.Tutorials;
 
 import java.util.Scanner;
+
 public class FibonacciSeries {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+        char choice;
 
-        System.out.print("Enter n: ");
-        int n = sc.nextInt();
+        do {
+            System.out.print("Enter number of terms (n): ");
+            int n = sc.nextInt();
 
-        int a = 0, b = 1;
+            int a = 0, b = 1;
 
-        for (int i = 1; i <= n; i++) {
-            System.out.print(a + " ");
-            int next = a + b;
-            a = b;
-            b = next;
-        }
+            System.out.print("Fibonacci Series: ");
+            for (int i = 1; i <= n; i++) {
+                System.out.print(a + " ");
+                int next = a + b;
+                a = b;
+                b = next;
+            }
+
+            System.out.println(); // new line
+            System.out.print("Do you want to check again? (y/n): ");
+            choice = sc.next().charAt(0);
+
+        } while (choice == 'y' || choice == 'Y');
+
+        System.out.println("Program ended. Thank you!");
+        sc.close();
     }
 }
