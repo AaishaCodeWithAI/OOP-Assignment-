@@ -1,15 +1,30 @@
 package Assignment2.Tutorials;
 
 import java.util.Scanner;
+
 public class MultiplicationTable {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+        char choice;
 
-        System.out.print("Enter number: ");
-        int n = sc.nextInt();
+        do {
+            System.out.print("Enter a number: ");
+            int n = sc.nextInt();
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(n + " x " + i + " = " + (n * i));
-        }
+            System.out.println("Multiplication Table of " + n + ":");
+            for (int i = 1; i <= 10; i++) {
+                System.out.println(n + " x " + i + " = " + (n * i));
+            }
+
+            System.out.print("Do you want to print another table? (y/n): ");
+            choice = sc.next().charAt(0);
+
+        } while (choice == 'y' || choice == 'Y');
+
+        System.out.println("Program ended. Thank you!");
+        sc.close();
     }
 }
+
+
