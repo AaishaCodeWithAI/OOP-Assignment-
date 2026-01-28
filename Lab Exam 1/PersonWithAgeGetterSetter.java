@@ -1,3 +1,5 @@
+package Lab_Exam1;
+
 class Person {
     private int age; // private variable
 
@@ -10,7 +12,9 @@ class Person {
     public int getAge() {
         return age;
     }
+}
 
+public class PersonWithAgeGetterSetter {
     public static void main(String[] args) {
         Person p = new Person();
         p.setAge(25);
