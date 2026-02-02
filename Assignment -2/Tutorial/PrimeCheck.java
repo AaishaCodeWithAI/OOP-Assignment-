@@ -9,29 +9,36 @@ public class PrimeCheck {
         char choice;
 
         do {
-            System.out.print("Enter a number: ");
-            int num = sc.nextInt();
+            try {
+                  System.out.print("Enter a number: ");
+                  int num = sc.nextInt();
 
-            boolean isPrime = true;
+                  boolean isPrime = true;
 
-            if (num <= 1) {
-                isPrime = false;
-            } else {
-                for (int i = 2; i <= Math.sqrt(num); i++) {
-                    if (num % i == 0) {
-                        isPrime = false;
-                        break;
-                    }
-                }
-            }
+                  if (num <= 1) {
+                      isPrime = false;
+                  } else {
+                            for (int i = 2; i <= Math.sqrt(num); i++) {
+                                  if (num % i == 0) {
+                                  isPrime = false;
+                                  break;
+                                  }
+                            }
+                         }
 
-            if (isPrime)
-                System.out.println("Prime Number");
-            else
-                System.out.println("Not a Prime Number");
+                if (isPrime) {
+                       System.out.println("Prime Number");
+                    
+                } else {
+                       System.out.println("Not a Prime Number");
+                    
+                 } catch (InputMismatchException e) {
+                       System.out.println("Invalid input! Please enter an integer value.");
+                       sc.next(); // clear invalid input
+                 }
 
-            System.out.print("Do you want to check another number? (y/n): ");
-            choice = sc.next().charAt(0);
+        System.out.print("Do you want to check another number? (y/n): ");
+        choice = sc.next().charAt(0);
 
         } while (choice == 'y' || choice == 'Y');
 
