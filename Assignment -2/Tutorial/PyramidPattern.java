@@ -25,7 +25,8 @@ public class PyramidPattern {
                       }
                        System.out.println();
                    }
-                } catch (InputMismatchException e) {
+                }
+             }catch (InputMismatchException e) {
                 
                 System.out.println("Invalid input! Please enter an integer value.");
                 sc.next(); // clear invalid input
