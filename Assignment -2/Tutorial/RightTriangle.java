@@ -9,10 +9,11 @@ public class RightTriangle {
         char choice;
 
         do {
-            System.out.print("Enter number of rows: ");
-            int rows = sc.nextInt();
+            try { 
+                System.out.print("Enter number of rows: ");
+                int rows = sc.nextInt();
 
-            if (rows <= 0) {
+                if (rows <= 0) {
                 System.out.println("Number of rows must be positive!");
             } else {
                 System.out.println("Right-Angled Triangle Pattern:");
@@ -22,6 +23,10 @@ public class RightTriangle {
                     }
                     System.out.println();
                 }
+            }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! Please enter an integer value.");
+                sc.next(); // clear invalid input
             }
 
             System.out.print("Do you want to print another triangle? (y/n): ");
