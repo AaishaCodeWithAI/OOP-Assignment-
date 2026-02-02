@@ -1,13 +1,16 @@
 package Assignment2.Tutorials;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-    public class BasicCalculator {
-        public static void main(String[] args) {
 
-            Scanner sc = new Scanner(System.in);
-            char continueCalc;
+public class BasicCalculator {
+    public static void main(String[] args) {
 
-            do {
+        Scanner sc = new Scanner(System.in);
+        char continueCalc = 'y';
+
+        do {
+            try {
                 System.out.print("Enter first number: ");
                 double a = sc.nextDouble();
 
@@ -50,13 +53,18 @@ import java.util.Scanner;
 
                 } while (choice == 'y' || choice == 'Y');
 
-                System.out.print("Do you want to perform another calculation with new numbers? (y/n): ");
-                continueCalc = sc.next().charAt(0);
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! Please enter numeric values only.");
+                sc.next(); // clear wrong input
+            }
 
-            } while (continueCalc == 'y' || continueCalc == 'Y');
+            System.out.print("Do you want to perform another calculation with new numbers? (y/n): ");
+            continueCalc = sc.next().charAt(0);
 
-            System.out.println("Calculator closed. Thank you!");
-            sc.close();
-        }
+        } while (continueCalc == 'y' || continueCalc == 'Y');
+
+        System.out.println("Calculator closed. Thank you!");
+        sc.close();
     }
+}
 
