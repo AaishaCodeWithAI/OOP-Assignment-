@@ -1,27 +1,34 @@
 package Assignment2.Tutorials;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class LogicalCheck {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        char choice;
+        char choice = 'y';
 
         do {
-            System.out.print("Enter first number: ");
-            int a = sc.nextInt();
+            try {
+                System.out.print("Enter first number: ");
+                int a = sc.nextInt();
 
-            System.out.print("Enter second number: ");
-            int b = sc.nextInt();
+                System.out.print("Enter second number: ");
+                int b = sc.nextInt();
 
-            System.out.print("Enter third number: ");
-            int c = sc.nextInt();
+                System.out.print("Enter third number: ");
+                int c = sc.nextInt();
 
-            if ((a + b == c) && (c > 0)) {
-                System.out.println("✔ Third number is the sum of first two and is positive");
-            } else {
-                System.out.println("✘ Condition not satisfied");
+                if ((a + b == c) && (c > 0)) {
+                    System.out.println("✔ Third number is the sum of first two and is positive");
+                } else {
+                    System.out.println("✘ Condition not satisfied");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! Please enter integer values only.");
+                sc.next(); // clear invalid input
             }
 
             System.out.print("Do you want to check again? (y/n): ");
