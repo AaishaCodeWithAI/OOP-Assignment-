@@ -32,7 +32,8 @@ public class PrimeCheck {
                 } else {
                        System.out.println("Not a Prime Number");
                     
-                 } catch (InputMismatchException e) {
+                 }
+            } catch (InputMismatchException e) {
                        System.out.println("Invalid input! Please enter an integer value.");
                        sc.next(); // clear invalid input
                  }
