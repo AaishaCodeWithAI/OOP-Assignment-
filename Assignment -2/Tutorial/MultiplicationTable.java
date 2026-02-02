@@ -1,20 +1,27 @@
 package Assignment2.Tutorials;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MultiplicationTable {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        char choice;
+        char choice = 'y';
 
         do {
-            System.out.print("Enter a number: ");
-            int n = sc.nextInt();
+            try {
+                System.out.print("Enter a number: ");
+                int n = sc.nextInt();
 
-            System.out.println("Multiplication Table of " + n + ":");
-            for (int i = 1; i <= 10; i++) {
-                System.out.println(n + " x " + i + " = " + (n * i));
+                System.out.println("Multiplication Table of " + n + ":");
+                for (int i = 1; i <= 10; i++) {
+                    System.out.println(n + " x " + i + " = " + (n * i));
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input! Please enter an integer number.");
+                sc.next(); // clear invalid input
             }
 
             System.out.print("Do you want to print another table? (y/n): ");
@@ -26,5 +33,6 @@ public class MultiplicationTable {
         sc.close();
     }
 }
+
 
 
